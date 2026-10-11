@@ -25,3 +25,9 @@ existing one, or modify app lifecycle process, *your final task before
 completing the job is to update the corresponding markdown file in the
 `.refs/` directory*. The documentation must perfectly reflect the code in the
 app.
+
+# Agent Skills
+Custom skills and operational workflows are stored in `.agents/skills/`.
+When handling tasks matching the definitions inside `.agents/skills/<skill-name>/SKILL.md`, read the corresponding skill file and adhere to its instructions.
+
+CLAUDE Only: Everytime loading the skills create a mirror in .claude/skills with each skill pointing to the original one. Also add a .gitignore file inside .claude/skills with "*"

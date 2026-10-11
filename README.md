@@ -6,16 +6,17 @@ self-maintaining documentation loop: agents write code, and the same task
 requires them to update the doc that explains it — so `.refs/` never drifts
 far from the code it describes.
 
-Extracted from a real project's `AGENTS.md`/`CLAUDE.md`/`.agents/`/`.refs/`
+Extracted from a real project's `AGENTS.md`/`.agents/`/`.refs/`
 setup; genericized so it drops into any stack.
 
 ## What's in here
 
-- **`AGENTS.md`** — the entry point agents read first: a map of `.refs/`
-  and the Operating Protocol (the self-maintaining loop rule itself).
-- **`CLAUDE.md`** — Claude Code's own entry point; just points at
-  `AGENTS.md` plus the skills directory, so the two never say different
-  things.
+- **`AGENTS.md`** — the single entry point for every agent (no separate
+  `CLAUDE.md`): a map of `.refs/`, the Operating Protocol (the
+  self-maintaining loop rule itself), and where skills live.
+- **`.claude/skills/`** — generated, gitignored mirror for Claude Code:
+  each entry links back to `.agents/skills/<name>`, recreated by Claude
+  whenever it loads skills (per `AGENTS.md`).
 - **`.agents/skills/commit/SKILL.md`** — an example skill: encodes this
   project's commit conventions (Conventional Commits, atomic, title-only)
   so an agent doesn't have to be told the rules every session.
