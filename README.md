@@ -20,6 +20,11 @@ setup; genericized so it drops into any stack.
 - **`.agents/skills/commit/SKILL.md`** — an example skill: encodes this
   project's commit conventions (Conventional Commits, atomic, title-only)
   so an agent doesn't have to be told the rules every session.
+- **`.agents/skills/ref-write/SKILL.md`** — how to write a ref: the
+  Operating Protocol requires it for every `.refs/` update, so new entries
+  record only the why, gotchas and gaps, verified against the code.
+- **`.agents/skills/ref-compact/SKILL.md`** — periodic cleanup pass for
+  `.refs/`: strips session narrative and restated code, fixes drift.
 - **`.refs/`** — the living documentation set:
   - `conventions.md` — hard authoring rules (no code comments; docs go in
     `.refs/` instead; reusable-component discipline).
